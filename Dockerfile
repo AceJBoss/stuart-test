@@ -15,6 +15,3 @@ RUN npm i --only=production
 COPY . .
 COPY --from=build /usr/src/app/dist ./dist
 CMD ["npm", "run", "start:prod"]
-
-#docker build -t stuart-test
-#docker run -p 3000:3000 --name courier -d stuart-test
