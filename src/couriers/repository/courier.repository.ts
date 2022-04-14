@@ -24,7 +24,7 @@ export class CourierRepository {
         return this.couriers;
     }
 
-    async findAllCapacity(capacity_required: number): Promise<Courier[]> {
+    async findCouriersWithCapacity(capacity_required: number): Promise<Courier[]> {
         const couriers = await this.findAll();
         if(capacity_required <= 0){
             throw new BadRequestException(`${capacity_required} ${Messages.INVALID_CAPACITY}`)
