@@ -24,7 +24,7 @@ export class CouriersController {
     @Get('lookup/:capacity_required')
     //@ApiParam({ name: 'id'})
     getCourierByCapacity(@Param('capacity_required') capacity_required: number): Promise<Courier[]> {
-        return this.couriersService.getCapacity(capacity_required)
+        return this.couriersService.getAvailableCapacity(capacity_required)
     }
 
     @Get('/:id')
