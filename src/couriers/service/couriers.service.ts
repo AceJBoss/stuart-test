@@ -15,8 +15,8 @@ export class CouriersService {
         return await this.courierRepository.findAll();
     }
 
-    async getCapacity(capacity_required: number): Promise<Courier[]> {
-        return await this.courierRepository.findAllCapacity(capacity_required);
+    async getAvailableCapacity(capacity_required: number): Promise<Courier[]> {
+        return await this.courierRepository.findCouriersWithCapacity(capacity_required);
     }
 
     async create(employeeCreateDto: CourierCreateDto): Promise<Courier> {
